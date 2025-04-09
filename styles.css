@@ -1,0 +1,186 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:root {
+  /* colors */
+  --clr-desaturated-red: hsl(0, 36%, 70%);
+  --clr-soft-red: hsl(0, 93%, 68%);
+  --clr-dark-grayish-red: hsl(0, 6%, 24%);
+
+  /* linear gradients */
+  --lg-white-linear: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  --lg-red-linear: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  /* font size */
+  --fs-p: clamp(1rem, 0.964rem + 0.179vw, 1.125rem);
+
+  /* font family */
+  --ff-josefin: "Josefin Sans", sans-serif;
+}
+
+body {
+  font-family: var(--ff-josefin);
+  min-height: 100dvh;
+  font-size: var(--fs-p);
+  display: grid;
+  background: var(--lg-white-linear);
+  color: var(--clr-desaturated-red);
+  font-weight: 600;
+}
+header {
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+}
+aside {
+  grid-row: 2;
+}
+.hero-picture,
+.hero-image {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.main_content {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+.secondary_heading {
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+  font-size: 2.5rem;
+  span {
+    color: var(--clr-dark-grayish-red);
+  }
+}
+.form {
+  width: 100%;
+}
+.form_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid red;
+}
+.email-input {
+  width: 100%;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border: none;
+  outline: none;
+}
+.email-input::placeholder {
+  color: var(--clr-desaturated-red);
+}
