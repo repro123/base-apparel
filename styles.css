@@ -223,6 +223,9 @@ aside {
   padding-inline-start: 1rem;
   color: var(--clr-soft-red);
 }
+.success-message {
+  color: green;
+}
 .submit-button {
   background: var(--lg-red-linear);
   display: grid;
