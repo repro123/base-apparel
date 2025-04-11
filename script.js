@@ -45,6 +45,6 @@ form.addEventListener("submit", function (e) {
 
     setTimeout(clearFields, 3000); //clear learFields function after 3 seconds
   } else {
-    errorMessage.textContent = "Please fix the errors before submitting";
+    errorMessage.textContent = "Please provide a valid email";
   }
 });
